@@ -332,11 +332,6 @@ upcoming match page========end==========end==================
    width: 10%;
    text-align: center;
 }
-
-
-
-
-
 /* ----------------------
 tablet media screen
  ----------------------*/
@@ -478,3 +473,9 @@ footer ul {
  /* 
 mobile media screen---------end
  */
+ @media only screen and (max-width:1060px) {
+   .blogs {
+      grid-template-columns: repeat(3,1fr);
+   }
+
+ }
