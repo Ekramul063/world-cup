@@ -33,6 +33,11 @@ h1,h2,h3,h4{
 .fluid{
    width: 100%;
 }
+.icon::before {
+   display: inline-block;
+   text-rendering: auto;
+   -webkit-font-smoothing: antialiased;
+ }
 /* -----------
 header section.....
  -----------*/
@@ -70,12 +75,27 @@ p{
    margin: 30px 0;
    display: inline-block;
    position: relative;
+   transition: .1s;
 }
-.icon::before {
-   display: inline-block;
-   text-rendering: auto;
-   -webkit-font-smoothing: antialiased;
- }
+.header_btn::after {
+   position: absolute;
+   font: var(--fa-font-solid);
+   content: "\f105";
+   top: 19px;
+   transition: .1s;
+   right: 10px;
+}
+
+.header_btn:hover.header_btn::after{
+   content: "\f061";
+   top: 17px;
+
+}
+.header_btn:hover{
+   padding-right: 40px;
+   font-size: 25px;
+   color: #898686;
+}
 
 /* header section end*/
 
@@ -93,8 +113,8 @@ blog left widgets section...........
    flex-direction: column;
    float: left;
    border-radius: 10px;
-   width: 290px;
-   height: 250px;
+   width: 260px;
+   height: 280px;
    align-items: center;
    justify-content: center;
  }
@@ -102,16 +122,19 @@ blog left widgets section...........
    text-decoration: none;
  }
  .widgets_btn {
-   font-size: 20px;
+   font-size: 18px;
    font-weight: 500;
-   line-height: 30px;
-   width: 201px;
-   height: 52px;
+   width: 200px;
+   height: 55px;
+   border: none;
    border-radius: 10px;
    background-color: #FFFFFF;
-   margin-bottom: 10px;
+   margin-bottom: 20px;
    cursor: pointer;
    transition: .3s;
+}
+.last_btn{
+   margin-bottom: 0px;
 }
 .active_bg{
    background-color: var(--active_btn);
@@ -157,11 +180,13 @@ blog section
 --------------------*/
 
 .blogs{
-   width: calc(100% - 314px);
+   width: calc(100% - 284px);
    float: right;
    display: grid;
    grid-template-columns: repeat(4,1fr);
    grid-gap: 24px;
+   padding-right:15px;
+   grid-auto-rows: auto;
 }
 .blog {
    border: 1px solid #9b9999;
@@ -270,6 +295,49 @@ footer ul li a{
 /* footer section end*/
 
 
+
+/* =============
+upcoming match page====================================
+   ==============
+ */
+
+/* =============
+upcoming match page========end==========end==================
+   ==============
+ */
+ .match_blogs{
+   width: calc(100% - 314px);
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-gap: 24px;
+   float: right;
+   padding: 0px 15px;
+ }
+.upcomeing_match_thumbnail{
+   display: flex;
+}
+.match_blog {
+   border: 1px solid #cfcece;
+   padding: 20px;
+   box-shadow: 0px 0px 2px #cfcece;
+   border-radius: 10px;
+}
+.team-1,.team-2{
+   width: 45%;
+}
+.team_flag{
+   max-height: 80px;
+   width: 100%;
+}
+.upcomeing_match_thumbnail p{
+   width: 10%;
+   text-align: center;
+}
+
+
+
+
+
 /* ----------------------
 tablet media screen
  ----------------------*/
@@ -313,11 +381,13 @@ main .container{
    background-color: #FFFFFF;
    margin-bottom: 30px;
 }
-/* .widgets_btn{
-   font-size: 18px;
-    width: 180px;
-    height: 50px;
-} */
+.widgets_btn {
+   border:1px solid grey;
+}
+.last_btn{
+   margin-bottom: 20px;
+}
+
 
 .blogs {
    width: 100%;
@@ -328,6 +398,16 @@ main .container{
   display: block;
   
 } 
+/*====== upcoming match page ======*/
+.match_blogs {
+   width: 100%;
+   float: none;
+}
+.match_blogs{
+   grid-template-columns: repeat(2,1fr);
+}
+
+
 }
 /* 
 tablet media screen---------end
@@ -340,7 +420,7 @@ mobile media screen
 
  @media only screen and (max-width:767px) {
    .container {
-      padding: 0px 50px;
+      padding: 0px 40px;
   }
   header{
    text-align: center;
@@ -348,6 +428,35 @@ mobile media screen
    .two_col {
       display: grid;
       grid-template-columns: repeat(1,1fr);
+  }
+  h1 {
+   font-size: 35px;
+   line-height: 45px;
+   font-weight: 600;
+}
+  header p {
+   font-size: 13px;
+   line-height: 22px;
+}
+  .header_btn{
+   font-size: 16px;
+  }
+  .header_btn::after {
+   top: 15px; 
+}
+
+.header_btn:hover.header_btn::after{
+   content: "\f061";
+   top: 13px;
+
+}
+.header_btn:hover{
+   padding-right: 40px;
+   font-size: 18px;
+   color: #898686;
+}
+.header_btn::after{
+   top: 15px;
   }
   .left_widgets{
    flex-direction: column;
@@ -359,6 +468,10 @@ footer ul {
    flex-direction: column;
    align-items: center;
    padding: 0;
+}
+/*====== upcoming match page ======*/
+.match_blogs{
+   grid-template-columns: repeat(1,1fr);
 }
    
  }
