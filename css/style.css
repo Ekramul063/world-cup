@@ -186,8 +186,6 @@ blog section
    grid-template-columns: repeat(4,1fr);
    grid-gap: 24px;
    padding-right:15px;
-   grid-auto-rows: auto;
-   overflow: hidden;
 }
 .blog {
    border: 1px solid #9b9999;
@@ -313,7 +311,6 @@ upcoming match page========end==========end==================
    grid-gap: 24px;
    float: right;
    padding: 0px 15px;
-   overflow: hidden;
  }
 .upcomeing_match_thumbnail{
    display: flex;
